@@ -171,8 +171,8 @@ export default function Page() {
 
   return (
     selectedUser && (
-      <main className="flex flex-col justify-between bg-[#0a0a0a] min-h-96">
-        <div className="flex flex-col w-full p-1 text-black">
+      <main className="flex flex-col justify-between bg-[#0a0a0a] min-h-96 h-full w-full flex-1">
+        <div className="flex flex-col w-full p-1 text-white overflow-y-scroll">
         {filteredMessages.map((message, index) => {
             const showName = index === 0 || message.from_user_id !== filteredMessages[index - 1].from_user_id;
 
@@ -184,7 +184,7 @@ export default function Page() {
                                 ~ {message.username}
                             </span>
                         )}
-                        <p className="px-2 mt-2 font-medium text-right text-white rounded-md w-fit">
+                        <p className="px-2 mt-2 font-medium text-right text-white rounded-md w-fit break-all">
                             {message.message}
                         </p>
                     </div>
